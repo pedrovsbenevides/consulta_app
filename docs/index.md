@@ -5,7 +5,7 @@ Agrupados por módulo
 * [Login](./auth/login.md)
 
 ### Cidade
-* [Listar]()
+* [Listar](./cidade/listar.md)
 
 ### Consulta
 * [Listar]()
