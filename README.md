@@ -16,3 +16,5 @@ Certifique-se de possuir [Docker](https://docs.docker.com/get-docker/)
     laravelsail/php84-composer:latest \
     composer install --ignore-platform-reqs
 ```
+3. Iniciar contêineres com o Sail: `./vendor/bin/sail up`
+4. Após inicialização dos contêineres a API estará disponível no endereço: `http://localhost:80` ou simplesmente `http://localhost`
