@@ -6,6 +6,11 @@ use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
+
+    public $bindings =  [
+        \App\Services\Contracts\AuthContract::class => \App\Services\AuthService::class
+    ];
+
     /**
      * Register any application services.
      */
