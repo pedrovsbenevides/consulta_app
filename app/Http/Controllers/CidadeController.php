@@ -14,9 +14,11 @@ class CidadeController extends Controller
         $this->service = $service;
     }
 
-    public function listar(?string $nome = null)
+    public function listar(Request $request)
     {
         try {
+            $nome = $request->get('nome');
+
             $data = $this->service->getAll($nome);
 
             return response()->json($data);
