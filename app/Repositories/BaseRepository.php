@@ -112,7 +112,7 @@ class BaseRepository
         return $this->model->all($columns);
     }
 
-    protected function orderBy(string $fieldName, string $order = 'asc')
+    protected function orderBy(string $fieldName, string $order = 'asc'): Builder
     {
 
         return $this->query->orderBy($fieldName, $order);
