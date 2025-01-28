@@ -71,4 +71,22 @@ class PacienteService implements PacienteContract
             throw $th;
         }
     }
+
+    public function listarPorMedico(int $medicoId, bool|null $flagAgendadas): Collection
+    {
+
+        try {
+            $pacientes = $this->repo->getByMedico($medicoId);
+
+            if ($flagAgendadas) {
+                $pacientes->onlyAgendadas();
+            }
+
+            $pacientes = $pacientes->withConsultas()->get();
+
+            return $pacientes;
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+    }
 }
