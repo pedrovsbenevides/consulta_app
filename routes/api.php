@@ -21,6 +21,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::group(['prefix' => 'medicos'], function () {
         Route::post('/', 'MedicoController@cadastrar');
         Route::post('/consulta', 'ConsultaController@agendar');
+        Route::get('{medicoId}/pacientes', 'PacienteController@listarPorMedico');
     });
 
     Route::group(['prefix' => 'pacientes'], function () {
