@@ -21,4 +21,9 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::group(['prefix' => 'medicos'], function () {
         Route::post('/', 'MedicoController@cadastrar');
     });
+
+    Route::group(['prefix' => 'pacientes'], function () {
+        Route::post('/', 'PacienteController@cadastrar');
+        Route::put('/{pacienteId}', 'PacienteController@atualizar');
+    });
 });
