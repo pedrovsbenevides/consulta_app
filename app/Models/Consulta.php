@@ -32,7 +32,9 @@ class Consulta extends Model
 	protected $casts = [
 		'medico_id' => 'int',
 		'paciente_id' => 'int',
-		'data' => 'datetime'
+		'data' => 'datetime:Y-m-d H:i:s',
+		'created_at' => 'datetime:Y-m-d H:i:s',
+		'updated_at' => 'datetime:Y-m-d H:i:s'
 	];
 
 	protected $fillable = [

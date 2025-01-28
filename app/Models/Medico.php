@@ -30,7 +30,9 @@ class Medico extends Model
 	protected $table = 'medico';
 
 	protected $casts = [
-		'cidade_id' => 'int'
+		'cidade_id' => 'int',
+		'created_at' => 'datetime:Y-m-d H:i:s',
+		'updated_at' => 'datetime:Y-m-d H:i:s'
 	];
 
 	protected $fillable = [
