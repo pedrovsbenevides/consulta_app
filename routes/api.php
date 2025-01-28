@@ -20,6 +20,7 @@ Route::group(['middleware' => 'auth:api'], function () {
 
     Route::group(['prefix' => 'medicos'], function () {
         Route::post('/', 'MedicoController@cadastrar');
+        Route::post('/consulta', 'ConsultaController@agendar');
     });
 
     Route::group(['prefix' => 'pacientes'], function () {
