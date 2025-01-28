@@ -15,6 +15,7 @@ class CreateMedicoRequest extends FormRequest
     {
         return [
             'nome' => 'required|string',
+            'cidade_id' => 'required|int',
             'especialidade' => 'required|string'
         ];
     }

@@ -15,9 +15,11 @@ class MedicoController extends Controller
         $this->service = $service;
     }
 
-    public function listar(?string $nome = null)
+    public function listar(Request $request)
     {
         try {
+            $nome = $request->get('nome');
+
             $data = $this->service->getAll($nome);
 
             return response()->json($data);
@@ -26,10 +28,12 @@ class MedicoController extends Controller
         }
     }
 
-    public function listarPorCidade(int $id, ?string $nome = null)
+    public function listarPorCidade(int $id, Request $request)
     {
 
         try {
+            $nome = $request->get('nome');
+
             $data = $this->service->getByCidade($id, $nome);
 
             return response()->json($data);
@@ -38,13 +42,13 @@ class MedicoController extends Controller
         }
     }
 
-    public function cadastrar(int $cidadeId, CreateMedicoRequest $request)
+    public function cadastrar(CreateMedicoRequest $request)
     {
 
         try {
             $data = $request->validated();
 
-            return $this->service->create($cidadeId, $data);
+            return $this->service->create($data);
         } catch (\Throwable $th) {
             throw $th;
         }

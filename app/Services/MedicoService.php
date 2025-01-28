@@ -70,11 +70,10 @@ class MedicoService implements MedicoContract
         }
     }
 
-    public function create(int $cidadeId, array $data): Medico
+    public function create(array $data): Medico
     {
         try {
             $data['uuid'] = Str::uuid();
-            $data['cidade_id'] = $cidadeId;
 
             DB::beginTransaction();
 
