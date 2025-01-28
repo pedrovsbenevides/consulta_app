@@ -7,17 +7,18 @@ Route::group(['prefix' => 'auth'], function () {
 });
 
 Route::group(['prefix' => 'cidades'], function () {
-    Route::get('/{nome?}', 'CidadeController@listar');
-    Route::get('/{cidadeId}/medicos/{nome?}', 'MedicoController@listarPorCidade');
+    Route::get('/', 'CidadeController@listar');
+    Route::get('/{cidadeId}/medicos', 'MedicoController@listarPorCidade');
 });
 
 Route::group(['prefix' => 'medicos'], function () {
-    Route::get('/{nome?}', 'MedicoController@listar');
+    Route::get('/', 'MedicoController@listar');
 });
 
 Route::group(['middleware' => 'auth:api'], function () {
+    Route::post('/user', 'AuthController@me');
 
-    Route::group(['prefix' => 'cidades'], function () {
-        Route::post('/{cidadeId}/medicos/cadastrar', 'MedicoController@cadastrar');
+    Route::group(['prefix' => 'medicos'], function () {
+        Route::post('/', 'MedicoController@cadastrar');
     });
 });
