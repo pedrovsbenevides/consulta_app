@@ -43,4 +43,18 @@ class PacienteController extends Controller
             throw $th;
         }
     }
+
+    public function listarPorMedico(int $medicoId, Request $request)
+    {
+
+        try {
+            $flagAgendadas = $request->get('apenas-agendadas');
+
+            $data = $this->service->listarPorMedico($medicoId, $flagAgendadas);
+
+            return response()->json($data);
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+    }
 }
