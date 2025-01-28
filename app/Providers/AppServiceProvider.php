@@ -11,7 +11,8 @@ class AppServiceProvider extends ServiceProvider
         \App\Services\Contracts\AuthContract::class => \App\Services\AuthService::class,
         \App\Services\Contracts\CidadeContract::class => \App\Services\CidadeService::class,
         \App\Services\Contracts\MedicoContract::class => \App\Services\MedicoService::class,
-        \App\Services\Contracts\PacienteContract::class => \App\Services\PacienteService::class
+        \App\Services\Contracts\PacienteContract::class => \App\Services\PacienteService::class,
+        \App\Services\Contracts\ConsultaContract::class => \App\Services\ConsultaService::class
     ];
 
     /**
