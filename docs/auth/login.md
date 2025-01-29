@@ -3,8 +3,8 @@
 Autentica um usuario no sistema
 
 ##### Body:
-*   **email**: required - Email
-*   **password**: required - Senha
+*   **email**: required|email - Email
+*   **password**: required|string - Senha
 Ex:
 ```
 {
