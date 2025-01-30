@@ -19,4 +19,14 @@ class CreateMedicoRequest extends FormRequest
             'especialidade' => 'required|string'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'nome.required' => 'nome é necessário',
+            'cidade_id.required' => 'cidade_id é necessário',
+            'cidade_id.exists' => 'cidade_id inválido',
+            'especialidade.required' => 'especialidade é necessário',
+        ];
+    }
 }

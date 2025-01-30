@@ -19,4 +19,16 @@ class CreateConsultaRequest extends FormRequest
             'data' => 'required|date_format:Y-m-d H:i:s'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'medico_id.required' => 'medico_id é necessário',
+            'medico_id.exists' => 'medico_id é inválido',
+            'paciente_id.required' => 'paciente_id é necessário',
+            'paciente_id.exists' => 'paciente_id inválido',
+            'data.required' => 'data é necessário',
+            'data.date_format' => 'data deve estar no formato Y-m-d H:i:s',
+        ];
+    }
 }

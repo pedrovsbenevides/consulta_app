@@ -18,4 +18,13 @@ class LoginRequest extends FormRequest
             'password' => 'required|string',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'email.required' => 'email é necessário',
+            'email.email' => 'email inválido',
+            'password.required' => 'password é necessário'
+        ];
+    }
 }
