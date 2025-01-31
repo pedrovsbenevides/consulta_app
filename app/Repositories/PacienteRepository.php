@@ -27,9 +27,13 @@ class PacienteRepository extends BaseRepository
         return $this;
     }
 
-    public function withConsultas()
+    public function withConsultasByMedico(int|null $medicoId = null)
     {
-        $this->getQuery()->with('consulta');
+        $this->getQuery()->withWhereHas('consulta', function ($query) use ($medicoId) {
+            if ($medicoId) {
+                $query->where('medico_id', '=', $medicoId);
+            }
+        });
 
         return $this;
     }
