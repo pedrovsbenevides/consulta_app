@@ -83,6 +83,7 @@ class MedicoService implements MedicoContract
 
             return $medico;
         } catch (\Throwable $th) {
+            DB::rollBack();
             throw $th;
         }
     }

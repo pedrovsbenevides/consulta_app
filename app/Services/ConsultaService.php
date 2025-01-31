@@ -52,6 +52,7 @@ class ConsultaService implements ConsultaContract
 
             return $paciente;
         } catch (\Throwable $th) {
+            DB::rollBack();
             throw $th;
         }
     }

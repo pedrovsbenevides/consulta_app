@@ -52,6 +52,7 @@ class PacienteService implements PacienteContract
 
             return $paciente;
         } catch (\Throwable $th) {
+            DB::rollBack();
             throw $th;
         }
     }
@@ -61,13 +62,18 @@ class PacienteService implements PacienteContract
         try {
             $paciente = $this->repo->find($pacienteId);
 
+            DB::beginTransaction();
+
             $paciente->update([
                 'nome' => $data['nome'] ?? $paciente->nome,
                 'celular' => $data['celular'] ?? $paciente->celular,
             ]);
 
+            DB::commit();
+
             return $paciente;
         } catch (\Throwable $th) {
+            DB::rollBack();
             throw $th;
         }
     }
