@@ -8,7 +8,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
-class CidadeSeeder extends Seeder
+class PacienteSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,26 +18,29 @@ class CidadeSeeder extends Seeder
         try {
             DB::beginTransaction();
 
-            DB::table('cidade')->insert(
+            DB::table('paciente')->insert(
                 [
                     [
                         'uuid' => Str::uuid(),
-                        'nome' => 'Salvador',
-                        'estado' => 'BA',
+                        'nome' => 'Natália Sophia da Silva',
+                        'cpf' => '643.465.810-99',
+                        'celular' => '(71) 9 8630-3170',
                         'created_at' => Carbon::now(),
                         'updated_at' => Carbon::now()
                     ],
                     [
                         'uuid' => Str::uuid(),
-                        'nome' => 'São Paulo',
-                        'estado' => 'SP',
+                        'nome' => 'Levi Lucca Breno da Mata',
+                        'cpf' => '429.250.640-00',
+                        'celular' => '(84) 9 9867-7041',
                         'created_at' => Carbon::now(),
                         'updated_at' => Carbon::now()
                     ],
                     [
                         'uuid' => Str::uuid(),
-                        'nome' => 'Rio de Janeiro',
-                        'estado' => 'RJ',
+                        'nome' => 'Jennifer Juliana Peixoto',
+                        'cpf' => '426.195.280-70',
+                        'celular' => '(92) 9 9934-7425',
                         'created_at' => Carbon::now(),
                         'updated_at' => Carbon::now()
                     ]
