@@ -31,3 +31,12 @@ Certifique-se de possuir [Docker](https://docs.docker.com/get-docker/)
 * **powershell**: `vendor/bin/sail artisan migrate --seed`
 
 Após inicialização dos contêineres a API estará disponível no endereço: `http://localhost:80` ou simplesmente `http://localhost`
+
+## Autenticação
+Realize a autenticação com o usuário registrado na UserSeeder.
+```
+{
+	"email": "admin@gmail.com",
+	"password": "admin"
+}
+```
