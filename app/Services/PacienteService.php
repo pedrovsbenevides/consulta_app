@@ -76,15 +76,13 @@ class PacienteService implements PacienteContract
     {
 
         try {
-            $pacientes = $this->repo->getByMedico($medicoId);
+            $pacientes = $this->repo->withConsultasByMedico($medicoId);
 
             if ($flagAgendadas) {
                 $pacientes->onlyAgendadas();
             }
 
-            $pacientes = $pacientes->withConsultas()->get();
-
-            return $pacientes;
+            return $pacientes->get();;
         } catch (\Throwable $th) {
             throw $th;
         }
